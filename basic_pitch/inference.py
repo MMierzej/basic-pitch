@@ -26,21 +26,21 @@ from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple, Union, 
 
 from basic_pitch import CT_PRESENT, ICASSP_2022_MODEL_PATH, ONNX_PRESENT, TF_PRESENT, TFLITE_PRESENT
 
-try:
-    import tensorflow as tf
-except ImportError:
-    pass
+# try:
+#     import tensorflow as tf
+# except ImportError:
+#     pass
 
-try:
-    import coremltools as ct
-except ImportError:
-    pass
+# try:
+#     import coremltools as ct
+# except ImportError:
+#     pass
 
-try:
-    import tflite_runtime.interpreter as tflite
-except ImportError:
-    if TF_PRESENT:
-        import tensorflow.lite as tflite
+# try:
+#     import tflite_runtime.interpreter as tflite
+# except ImportError:
+#     if TF_PRESENT:
+#         import tensorflow.lite as tflite
 
 try:
     import onnxruntime as ort
