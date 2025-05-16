@@ -20,30 +20,34 @@ import logging
 import pathlib
 
 
-try:
-    import coremltools
+# try:
+#     import coremltools
+#
+#     CT_PRESENT = True
+# except ImportError:
+#     CT_PRESENT = False
+#     logging.warning(
+#         "Coremltools is not installed. "
+#         "If you plan to use a CoreML Saved Model, "
+#         "reinstall basic-pitch with `pip install 'basic-pitch[coreml]'`"
+#     )
 
-    CT_PRESENT = True
-except ImportError:
-    CT_PRESENT = False
-    logging.warning(
-        "Coremltools is not installed. "
-        "If you plan to use a CoreML Saved Model, "
-        "reinstall basic-pitch with `pip install 'basic-pitch[coreml]'`"
-    )
+CT_PRESENT = False
 
-try:
-    import tflite_runtime.interpreter
+# try:
+#     import tflite_runtime.interpreter
+#
+#     TFLITE_PRESENT = True
+# except ImportError:
+#     TFLITE_PRESENT = False
+#     logging.warning(
+#         "tflite-runtime is not installed. "
+#         "If you plan to use a TFLite Model, "
+#         "reinstall basic-pitch with `pip install 'basic-pitch tflite-runtime'` or "
+#         "`pip install 'basic-pitch[tf]'"
+#     )
 
-    TFLITE_PRESENT = True
-except ImportError:
-    TFLITE_PRESENT = False
-    logging.warning(
-        "tflite-runtime is not installed. "
-        "If you plan to use a TFLite Model, "
-        "reinstall basic-pitch with `pip install 'basic-pitch tflite-runtime'` or "
-        "`pip install 'basic-pitch[tf]'"
-    )
+TFLITE_PRESENT = False
 
 try:
     import onnxruntime
@@ -58,17 +62,19 @@ except ImportError:
     )
 
 
-try:
-    import tensorflow
+# try:
+#     import tensorflow
+#
+#     TF_PRESENT = True
+# except ImportError:
+#     TF_PRESENT = False
+#     logging.warning(
+#         "Tensorflow is not installed. "
+#         "If you plan to use a TF Saved Model, "
+#         "reinstall basic-pitch with `pip install 'basic-pitch[tf]'`"
+#     )
 
-    TF_PRESENT = True
-except ImportError:
-    TF_PRESENT = False
-    logging.warning(
-        "Tensorflow is not installed. "
-        "If you plan to use a TF Saved Model, "
-        "reinstall basic-pitch with `pip install 'basic-pitch[tf]'`"
-    )
+TF_PRESENT = False
 
 
 class FilenameSuffix(enum.Enum):
